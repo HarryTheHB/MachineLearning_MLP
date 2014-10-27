@@ -13,7 +13,7 @@ parser = argparse.ArgumentParser(description='Process data')
 parser.add_argument('-i', '--input', help='input file name', required=True)
 parser.add_argument('-o', '--output', help='output file name', required=True)
 
-args = parser.parse_args()
+args = parser.parse_args() 
 
 fr = open(args.input, 'r')
 fw = open(args.output, 'w')
@@ -39,11 +39,11 @@ for line in lines:
 	feature[13] = native_country.index(feature[13])
 
 	if salary == "<=50K.":
-		label = 1
+		label = 0
 	elif salary == ">50K.":
-		label = 2
+		label = 1
 	else:
-		label = 3
+		label = -1
 	
 	
 	feature.insert(0, label)
