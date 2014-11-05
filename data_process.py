@@ -38,9 +38,9 @@ for line in lines:
 	feature[9] = sex.index(feature[9])
 	feature[13] = native_country.index(feature[13])
 
-	if salary == "<=50K":
+	if salary == "<=50K.":
 		label = 0
-	elif salary == ">50K":
+	elif salary == ">50K.":
 		label = 1
 	else:
 		label = -1
