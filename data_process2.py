@@ -18,34 +18,33 @@ args = parser.parse_args()
 fr = open(args.input, 'r')
 fw = open(args.output, 'w')
 lines = fr.read().strip().splitlines()
+
+
    
 for line in lines:
 	words = line.split(', ')
 	num = len(words)
-	feature = words[:num-1]
-	salary = words[num-1].strip()
-	for f in feature:
-		#print f
-		if(f == '?'):
-			continue
+	
+	idx = 7;
 
-	feature[1] = workclass.index(feature[1])
-	feature[3] = education.index(feature[3])
-	feature[5] = marital_status.index(feature[5])
-	feature[6] = occupation.index(feature[6])
-	feature[7] = relationship.index(feature[7])
-	feature[8] = race.index(feature[8])
-	feature[9] = sex.index(feature[9])
-	feature[13] = native_country.index(feature[13])
+	words[1] = workclass.index(words[1])
+	words[3] = education.index(words[3])
+	words[5] = marital_status.index(words[5])
+	words[6] = occupation.index(words[6])
+	words[7] = relationship.index(words[7])
+	words[8] = race.index(words[8])
+	words[9] = sex.index(words[9])
+	words[13] = native_country.index(words[13])
 
-	if salary == "<=50K.":
-		label = 0
-	elif salary == ">50K.":
-		label = 1
+	if words[num-1] == "<=50K." or words[num-1] == "<=50K":
+		words[num-1] = 0
+	elif words[num-1] == ">50K." or words[num-1] == ">50K":
+		words[num-1] = 1
 	else:
-		label = -1
+		words[num-1] = -1
 	
-	
+	feature = words[:idx] + words[idx+1:]
+	label = words[idx]
 	feature.insert(0, label)
 	fw.write(', '.join(str(f) for f in feature)+"\n")
 
