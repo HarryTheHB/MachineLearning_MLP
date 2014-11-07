@@ -1,4 +1,6 @@
 import argparse
+from scipy.stats import bernoulli
+import math
 
 parser = argparse.ArgumentParser(description='Process data')
 parser.add_argument('-i', '--input', help='input file name', required=True)
@@ -22,7 +24,7 @@ for line in lines:
 	
 	feature = words[1:] 
 	#feature = to binary
-	binaryFeature = [bernoulli.rvs(1.0/(1 + math.exp(-1 * x)), size=1)[0] for x in feature]
+	binaryFeature = [str(bernoulli.rvs(1.0/(1 + math.exp(-1 * float(x))), size=1)[0]) for x in feature]
 
 	fw.write(' '.join(binaryFeature)+"\n")
 
