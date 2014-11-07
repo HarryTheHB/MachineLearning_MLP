@@ -22,8 +22,9 @@ for line in lines:
 	
 	feature = words[1:] 
 	#feature = to binary
+	binaryFeature = [bernoulli.rvs(1.0/(1 + math.exp(-1 * x)), size=1)[0] for x in feature]
 
-	fw.write(' '.join(feature)+"\n")
+	fw.write(' '.join(binaryFeature)+"\n")
 
 fr.close()
 fw.close()
