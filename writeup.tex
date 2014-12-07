@@ -4,41 +4,12 @@
 % Contact: nasmith@cs.cmu.edu
 
 \documentclass[11pt,letterpaper]{article}
-\usepackage{afterpage}
-\usepackage{algorithm}
-%\usepackage[noend]{algorithmic}
-\usepackage{algorithmic}
-\usepackage{amsfonts} 
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{array} 
-\usepackage{boxedminipage}
-\usepackage{caption} 
-\usepackage{cite}
-\usepackage{color} 
-\usepackage{enumerate}
-\usepackage{floatflt}
-\usepackage{float}
-\usepackage{framed}
-\usepackage{graphics}
-\usepackage{graphicx}
-\usepackage{indentfirst}
-\usepackage{latexsym}
-%\usepackage{lineno}
-\usepackage{multirow} 
-\usepackage{picinpar}
-\usepackage{placeins}
-\usepackage{psfrag} 
-\usepackage{subfigure}
-\usepackage{theorem} 
-%\usepackage{url}
-\usepackage{wrapfig} 
-%\usepackage[pdftex,hypertexnames=false]{hyperref}
 \usepackage{naaclhlt2010}
+\usepackage{amsmath}
 \usepackage{times}
 \usepackage{latexsym}
+\usepackage{graphicx}
 \setlength\titlebox{6.5cm}    % Expanding the titlebox
-
 \title{ A Machine Learning Based Approach for Predicting Adult Personal Information}
 
 \author{Lezhong Huang\\
@@ -60,6 +31,16 @@
 \begin{abstract}
 This document contains how to implement a machine learning algorithm. This algorithm is applied on predicting some aspects of personal information given a large training set. The sample is a combination of many aspects of personal information, so any one of them can be selected as input. For algorithm, we divided the implementation into three stages. First is output is binary with shallow learning, and the second is multiclass output with shallow learning, and the last one is deep learning. The experiments is provided to compare the performance of the three stages.
 \end{abstract}
+
+\section{Introduction}
+Intuitively, The information of one person is usually related to other information in a close range. One piece of information of a person may closely correlated with his/her other information. Besides, one person's information may also closely correlated to the information of his/her friends. Based on this trait, it's plausible to use machine learning techniques to infer one's unknown information based on other related information. In fact, 
+In this paper, we have dataset of a bunch of adults' information including marital status, education, salary level and etc. We implement a machine learning system which can infer one feature of a instance based on it's other features.
+\\
+Generally, there are three types of machine learning tasks, supervised learning, unsupervised learning and reinforcement learning. Since the training data we have include input and output, the task in this paper is supervised learning. Based on the type of output, machine learning task can also be classified as classification, regression and clustering. In this paper, the output is either binomial or multinomial, so it is a classification task. A Neural Networks based algorithm can easily satisfy above condition. Besides, Neural networks are universal approximators, and they work well for capturing associations within a set of features, which is what we need in this task. Hence, we choose Multilayer Perceptron (MLP), which is one of feedforward artificial neural network, to implement this task.
+\\
+The original Multilayer Perceptron algorithm requires feature data to be discrete. However, sometimes some feature might be continuous in dataset, like the dataset we chose. In this case, we have to use an approach to transfer continuous data into discrete.
+\\
+The rest of this paper is organized as follows. In section 2, we briefly describe the machine learning algorithm we choose. Section 3 presents the implementation details, which introducing dataset and 3 different levels of system we implement. In section 4 we provide experiment results and system performance under different conditions. At last, we conclude the paper in section 5.
 
 \section{Method}
 The algorithm implemented in this paper is Multilayer Perceptron (MLP). MLP is an artificial nerual network to solve classificaiton problem. The bottom layer of the nerual network is input layer which consists of several input nodes, and the number of input nodes equals the number of features. The top layer of the nerual network is output layer. If the output only has two classifications, we can use only one output node, and it has binary value to represent two classifications. If the output has $N$, where $N>2$, classifications, we need $N$ nodes in output layer to represent the $N$ classifications. The layers between input layer and output layer are hidden layers. The number of hidden layers and the nodes of each hidden layers are defined by users. 
@@ -255,8 +236,13 @@ where $x$ is the data before processing. \\
 For implementation of RBM, we will not talk about it here, because it has been introduced in homework4. What we did is to export the result of RBM into a file, which can be used as the initialization of the weighted matrices. \\
 For the implementation of CD-1, we use the 500 samples to pre-train the weighted matrix between inputy layer and the first hidden layer, then after getting the pre-trained weighted matrix, we use it to update the value of nodes in first hidden layer. We use the same method layer by layer until we get all the pre-trained weighted matrices between two neighboring layers. As for how to get one pre-trained weighted matrix, the three steps mentioned in \ref{subsec:pretraining} are implemented. All of the vectors $\mathbf{v}_n$, $\mathbf{v}_{n+1}$, $\mathbf{v}^{\prime}_n$ and $\mathbf{v}^{\prime}_{n+1}$ are binary, and the method to convert net value to binary is the same as the pre-process method, using sigmoid function and Bernoulli trial. 
 
+\section{Experimental Results}
+The first system we implement can only infer binomial feature. The feature we choose as label is salary level, which only have two states, larger than 50k or otherwise. 
+
+The improved system can infer feature with multinomial states. The feature we choose 
 
 
+As for the final system, we use some data to do the pretraining first.
 
 
 \subsection{Electronically-available resources}
@@ -483,6 +469,7 @@ subject to be rejected without review.
 Do not number the acknowledgment section.
 
 \begin{thebibliography}{}
+
 
 \bibitem[\protect\citename{Aho and Ullman}1972]{Aho:72}
 Alfred~V. Aho and Jeffrey~D. Ullman.
