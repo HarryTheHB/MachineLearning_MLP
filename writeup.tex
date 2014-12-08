@@ -33,10 +33,11 @@ This document contains how to implement a machine learning algorithm. This algor
 \end{abstract}
 
 \section{Introduction}
-Intuitively, The information of one person is usually related to other information in a close range. One piece of information of a person may closely correlated with his/her other information. Besides, one person's information may also closely correlated to the information of his/her friends. Based on this trait, it's plausible to use machine learning techniques to infer one's unknown information based on other related information. In fact, 
+Intuitively, information usually correlate with other information in a certain range. One piece of information of a person may closely correlated with his/her other information. Besides, one person's information may also has some connection with the information of his/her friends. Based on this trait, it's plausible to use machine learning techniques to infer one's unknown information based on other related information. In fact, the utilization of machine learning technique on information analysis has gain increased popularity in recent years. For example, this paper ~\cite{Mel:00} gives a general summary of apply machine learning for social media analysis.
+
 In this paper, we have dataset of a bunch of adults' information including marital status, education, salary level and etc. We implement a machine learning system which can infer one feature of a instance based on it's other features.
 \\
-Generally, there are three types of machine learning tasks, supervised learning, unsupervised learning and reinforcement learning. Since the training data we have include input and output, the task in this paper is supervised learning. Based on the type of output, machine learning task can also be classified as classification, regression and clustering. In this paper, the output is either binomial or multinomial, so it is a classification task. A Neural Networks based algorithm can easily satisfy above condition. Besides, Neural networks are universal approximators, and they work well for capturing associations within a set of features, which is what we need in this task. Hence, we choose Multilayer Perceptron (MLP), which is one of feedforward artificial neural network, to implement this task.
+Generally, there are three types of machine learning tasks, supervised learning, unsupervised learning and reinforcement learning. Since the training data we have includes input and output, the task in this paper is supervised learning. Based on the type of output, machine learning task can also be classified as classification, regression and clustering. In this paper, the output is either binomial or multinomial. So it is a classification task. A Neural Networks based algorithm can fulfil the task of supervised classification work. Besides, Neural networks are universal approximators, and they work well for capturing associations within a set of features, which is what we need in this task. Hence, we choose Multilayer Perceptron (MLP), which is one of feedforward artificial neural network, to implement this task.
 \\
 The original Multilayer Perceptron algorithm requires feature data to be discrete. However, sometimes some feature might be continuous in dataset, like the dataset we chose. In this case, we have to use an approach to transfer continuous data into discrete.
 \\
@@ -237,13 +238,110 @@ For implementation of RBM, we will not talk about it here, because it has been i
 For the implementation of CD-1, we use the 500 samples to pre-train the weighted matrix between inputy layer and the first hidden layer, then after getting the pre-trained weighted matrix, we use it to update the value of nodes in first hidden layer. We use the same method layer by layer until we get all the pre-trained weighted matrices between two neighboring layers. As for how to get one pre-trained weighted matrix, the three steps mentioned in \ref{subsec:pretraining} are implemented. All of the vectors $\mathbf{v}_n$, $\mathbf{v}_{n+1}$, $\mathbf{v}^{\prime}_n$ and $\mathbf{v}^{\prime}_{n+1}$ are binary, and the method to convert net value to binary is the same as the pre-process method, using sigmoid function and Bernoulli trial. 
 
 \section{Experimental Results}
-The first system we implement can only infer binomial feature. The feature we choose as label is salary level, which only have two states, larger than 50k or otherwise. 
+We have conducted three experiments.
+Each experiment we test the system with different activation function and different numbers of hidden nodes.
 
-The improved system can infer feature with multinomial states. The feature we choose 
+\subsection{Binomial Classification}
+The first system we implement can only infer binomial feature. The feature we choose as label is salary level, which only have two states, larger than 50k or otherwise. The number of feature used to training and predict is 14. We have trained and tested the data under 3 different number of hidden nodes: one that smaller than number of feature number, one that equal to the feature number and one that larger than feature number.
+The activation function used in this experiment is sigmoid. 
+The training accuracy and test accuracy are shown in table 2. 
 
 
-As for the final system, we use some data to do the pretraining first.
+\begin{table}
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|}
+\hline \bf Hidden Nodes Number & \bf 10 & \bf 14 & \bf 18 \\ \hline
+Training Accuracy& 75.92 & 81.13 & 76.23 \\
+Test Accuracy & 75.38 & 80.87 & 73.08 \\
 
+\hline
+\end{tabular}
+\end{center}
+\caption{\label{binary} Binary Accuracy Percentage}
+\end{table}
+
+These results show that training accuracy and test accuracy will reach the highest value when the number of hidden nodes is the same as feature number.
+
+\subsection{Multinomial Classification}
+The improved system can infer feature with multinomial states. First we still choose the binomial feature we use in previous experiment as label. In addition, we build the system with different activation function, sigmoid and tangent, the results of which are shown in table 3 and table 4 respectively. 
+
+\begin{table}
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|}
+\hline \bf Hidden Nodes Number & \bf 10 & \bf 14 & \bf 18 \\ \hline
+Training Accuracy& 70.49 & 80.81 & 83.91 \\
+Test Accuracy & 70.23 & 79.77 & 83.81 \\
+\hline
+\end{tabular}
+\end{center}
+\caption{\label{multi2-sig} Multinomial(2 states) Accuracy Percentage, sigmoid}
+\end{table}
+
+\begin{table}
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|}
+\hline \bf Hidden Nodes Number & \bf 10 & \bf 14 & \bf 18 \\ \hline
+Training Accuracy& 75.92 & 81.13 & 76.23 \\
+Test Accuracy & 75.38 & 80.87 & 73.08 \\
+\hline
+\end{tabular}
+\end{center}
+\caption{\label{multi2-tanh} Multinomial(2 states) Accuracy Percentage, tangent}
+\end{table}
+
+Then we choose ------ as feature which has 6 states. Results are shown in table 5 and table 6. 
+
+\begin{table}
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|}
+\hline \bf Hidden Nodes Number & \bf 10 & \bf 14 & \bf 18 \\ \hline
+Training Accuracy& 75.80 & 75.98 & 73.12 \\
+Test Accuracy & 74.23 & 74.84 & 72.30 \\
+\hline
+\end{tabular}
+\end{center}
+\caption{\label{multi6-sig} Multinomial(6 states) Accuracy Percentage, sigmoid}
+\end{table}
+
+\begin{table}
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|}
+\hline \bf Hidden Nodes Number & \bf 10 & \bf 14 & \bf 18 \\ \hline
+Training Accuracy& 45.53 & 51.35 & 51.72 \\
+Test Accuracy & 40.27 & 49.63 & 52.06 \\
+\hline
+\end{tabular}
+\end{center}
+\caption{\label{multi6-tanh} Multinomial(6 states) Accuracy Percentage, tangent}
+\end{table}
+
+
+From these results we can tell that sigmoid activation function generally generally leads to better results than tangent activation function. 
+Besides, when the number of output states increase, both the training and test accuracy will decrease.
+
+\subsection{Deep Network Binomial Classification}
+The final system use 2 hidden layer deep network learning algorithm. The target of this system is to test the effect of pre-training, so we only conduct the experiment with some fixed condition, that is, 14 hidden nodes on each hidden layer, binomial output and sigmoid activation function. The result is shown in table 7.
+\begin{table}
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|}
+\hline \bf pre-training  & \bf yes & \bf no \\ \hline
+Training Accuracy& 78.89 & 81.51 \\
+Test Accuracy & 78.86 & 75.42 \\
+\hline
+\end{tabular}
+\end{center}
+\caption{\label{deep2-sig} Deep Multinomial(2 states) Accuracy Percentage, sigmoid}
+\end{table}
+
+These results show that pre-training decrease the training accuracy and increase the test accuracy.
+
+\subsection{Experiments Summary}
+Conclude from the experimental results above, we can get following conclusions: \\
+1. When the number of hidden nodes is less than the number of feature, the accuracies are definitely worse than when the number of hidden nodes is equal to the number of feature. But after that, the increase of hidden nodes number may not lead to higher accuracies. Usually, the use the number of data feature as number of nodes in input layer will give a decent performance. How to optimize the number of nodes in hidden layer is a far more complex problem and we will not discuss it in this paper.
+\\
+2. In our experiments, sigmoid activation function generally produce better results than tangent function. This may due to that in our experiments, the activity in the network during training is close to positive 1 or negative 1. Then when using tanh, the gradient for the activation function may go to positive 1 or negative 1. Glorot and Bengio have discussed this problem in their paper~\cite{GL:10}.
+\\
+3. Unsupervised pre-training do help improve learning in deep networks. The reason why the training accuracy is lower in our third experiment may be that we don't have unsupervised data, so we have to use part of training data as unsupervised data which are therefore eliminate from training data. So in fact we less training data to do the learning. As a result, the training accuracy decreased.
 
 \subsection{Electronically-available resources}
 
@@ -470,6 +568,15 @@ Do not number the acknowledgment section.
 
 \begin{thebibliography}{}
 
+\bibitem[\protect\citename{Melville, Prem, et al.}]{Mel:00}
+Melville, Prem, Vikas Sindhwani, Richard D. Lawrence, Estepan Meliksetian, Yan Liu, Pei-Yun Hsueh, and Claudia Perlich.
+\newblock {\em Machine Learning for Social Media Analytics}
+
+\bibitem[\protect\citename{Glorot, X., Bengio, Y.}2010]{GL:10}
+Glorot, Xavier, and Yoshua Bengio.
+\newblock 2010
+\newblock {\em Understanding the difficulty of training deep feedforward neural networks.}
+\newblock {\em In International Conference on Artificial Intelligence and Statistics}, pp. 249-256. 
 
 \bibitem[\protect\citename{Aho and Ullman}1972]{Aho:72}
 Alfred~V. Aho and Jeffrey~D. Ullman.

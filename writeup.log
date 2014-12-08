@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.10)  23 NOV 2014 16:38
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.10)  8 DEC 2014 12:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -221,8 +221,11 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 <deep.pdf, id=1, 378.41376pt x 385.44pt>
 File: deep.pdf Graphic file (type pdf)
  <use deep.pdf>
-Package pdftex.def Info: deep.pdf used on input line 49.
+Package pdftex.def Info: deep.pdf used on input line 50.
 (pdftex.def)             Requested size: 227.05pt x 231.26578pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
@@ -230,14 +233,14 @@ Package pdftex.def Info: deep.pdf used on input line 49.
 
 ]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 55.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 56.
  [2]
-Overfull \hbox (15.12543pt too wide) detected at line 132
+Overfull \hbox (15.12543pt too wide) detected at line 133
 [] \OT1/cmr/m/n/10.95 = []([])([]) = []([])([])\OML/cmm/m/it/10.95 w[]
  []
 
 [3] [4]
-Overfull \hbox (21.7818pt too wide) detected at line 234
+Overfull \hbox (21.7818pt too wide) detected at line 235
 \OML/cmm/m/it/10.95 bernoulli:rvs\OT1/cmr/m/n/10.95 (1\OML/cmm/m/it/10.95 :\OT1
 /cmr/m/n/10.95 0\OML/cmm/m/it/10.95 =\OT1/cmr/m/n/10.95 (1 + \OML/cmm/m/it/10.9
 5 math:exp\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 ^^@\OT1/cmr/m/n/10.95 1 \OMS/
@@ -246,98 +249,114 @@ cmsy/m/n/10.95 ^^C \OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ))\OML/cmm/m/it/10.9
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 245--253
+Overfull \hbox (1.94281pt too wide) in paragraph at lines 252--259
+ [] 
+ []
+
+
+Overfull \hbox (1.94281pt too wide) in paragraph at lines 270--276
+ [] 
+ []
+
+
+Overfull \hbox (1.94281pt too wide) in paragraph at lines 282--288
+ [] 
+ []
+
+
+Overfull \hbox (1.94281pt too wide) in paragraph at lines 296--302
+ [] 
+ []
+
+
+Overfull \hbox (1.94281pt too wide) in paragraph at lines 308--314
+ [] 
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 348--356
 \OT1/ptm/m/n/10.95 NAACL HLT pro-vides this de-scrip-tion in
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 245--253
+Underfull \hbox (badness 10000) in paragraph at lines 348--356
 \OT1/ptm/m/n/10.95 L[]T[]X2e (\OT1/pcr/m/n/10.95 naaclhlt2010.tex\OT1/ptm/m/n/1
 0.95 ) and PDF
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 245--253
+Underfull \hbox (badness 10000) in paragraph at lines 348--356
 \OT1/ptm/m/n/10.95 for-mat (\OT1/pcr/m/n/10.95 naaclhlt2010.pdf\OT1/ptm/m/n/10.
 95 ), along with
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 245--253
+Underfull \hbox (badness 10000) in paragraph at lines 348--356
 \OT1/ptm/m/n/10.95 the L[]T[]X2e style file used to for-mat it
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 245--253
+Underfull \hbox (badness 10000) in paragraph at lines 348--356
 \OT1/ptm/m/n/10.95 (\OT1/pcr/m/n/10.95 naaclhlt2010.sty\OT1/ptm/m/n/10.95 ) and
  an ACL bib-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 245--253
+Underfull \hbox (badness 10000) in paragraph at lines 348--356
 \OT1/ptm/m/n/10.95 li-og-ra-phy style (\OT1/pcr/m/n/10.95 naaclhlt2010.bst\OT1/
 ptm/m/n/10.95 ).
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 245--253
+Underfull \hbox (badness 10000) in paragraph at lines 348--356
 \OT1/ptm/m/n/10.95 These files are all avail-able at
  []
 
 
-Underfull \hbox (badness 1748) in paragraph at lines 245--253
+Underfull \hbox (badness 1748) in paragraph at lines 348--356
 \OT1/pcr/m/n/10.95 http://naaclhlt2010.isi.edu\OT1/ptm/m/n/10.95 . A Mi-
  []
 
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 308.
+[6]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 411.
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 308.
- [5]
-Underfull \hbox (badness 3058) in paragraph at lines 391--394
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 411.
+ [7]
+Underfull \hbox (badness 3058) in paragraph at lines 494--497
 []\OT1/ptm/m/n/10.95 The L[]T[]X and BibT[]X style files pro-vided
  []
 
-[6]
-Underfull \vbox (badness 1584) has occurred while \output is active []
-
- [7]
-[8
-
- <./deep.pdf>] (./writeup.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+[8] [9 <./deep.pdf>] (./writeup.aux) ) 
 Here is how much of TeX's memory you used:
- 2311 strings out of 495031
- 31218 string characters out of 6181531
- 96718 words of memory out of 5000000
- 5459 multiletter control sequences out of 15000+600000
+ 2319 strings out of 495031
+ 31302 string characters out of 6181531
+ 97824 words of memory out of 5000000
+ 5467 multiletter control sequences out of 15000+600000
  32086 words of font info for 78 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 37i,9n,23p,819b,285s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ti
-mes/utmri8a.pfb>
-Output written on writeup.pdf (8 pages, 213407 bytes).
+ 37i,9n,23p,839b,285s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/
+dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/co
+urier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on writeup.pdf (9 pages, 220946 bytes).
 PDF statistics:
- 99 PDF objects out of 1000 (max. 8388607)
- 70 compressed objects within 1 object stream
+ 102 PDF objects out of 1000 (max. 8388607)
+ 72 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
